@@ -109,6 +109,6 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('product-category/{slug}', 'ProductCategoryByName')->name('product.category.name');
     Route::get('contact-us', 'ContactUs')->name('contact.us');
     Route::get('about-us', 'AboutUs')->name('about.us');
-    Route::get('products', 'Product')->name('product');
-    Route::get('product/details', 'ProductDetails')->name('product.details');
+    Route::get('products', 'Product')->name('products');
+    Route::get('product/{slug}', 'ProductDetails')->name('product.details');
 });

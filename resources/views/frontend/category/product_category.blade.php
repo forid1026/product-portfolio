@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-xxl-12">
                     <div class="breadcrumb__content p-relative z-index-1">
-                        <h3 class="breadcrumb__title">Only Categories</h3>
+                        <h3 class="breadcrumb__title">Product Categories</h3>
                         <div class="breadcrumb__list">
-                            <span><a href="#">Home</a></span>
-                            <span>Only Categories</span>
+                            <span><a href="{{ route('home') }}">Home</a></span>
+                            <span>Categories</span>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="tp-banner-item tp-banner-height has-square p-relative mb-30 z-index-1 fix">
                         <div class="tp-banner-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/product/banner/product-banner-1.jpg')}}"></div>
+                            data-background="{{ asset('frontend/assets/img/product/banner/product-banner-1.jpg') }}"></div>
                         <div class="tp-banner-content">
                             <span>Sale 20% off all store</span>
                             <h3 class="tp-banner-title">
@@ -49,7 +49,7 @@
                     <div
                         class="tp-banner-item tp-banner-item-sm has-square tp-banner-height p-relative mb-30 z-index-1 fix">
                         <div class="tp-banner-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/product/banner/product-banner-2.jpg')}}"></div>
+                            data-background="{{ asset('frontend/assets/img/product/banner/product-banner-2.jpg') }}"></div>
                         <div class="tp-banner-content">
                             <h3 class="tp-banner-title">
                                 <a href="product-details.html">HyperX Cloud II <br> Wireless</a>
@@ -78,150 +78,29 @@
     <section class="tp-category-area pb-120">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-1.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Headphones</a>
-                            </h3>
-                            <span class="tp-category-main-item">23 Products</span>
+                @if (count($categories) > 0)
+                    @foreach ($categories as $category)
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
+                                <div class="tp-category-main-thumb include-bg transition-3"
+                                    data-background="{{ asset($category->category_image) }}">
+                                </div>
+                                <div class="tp-category-main-content">
+                                    <h3 class="tp-category-main-title">
+                                        <a
+                                            href="{{ route('product.category.name', $category->id) }}">{{ $category->name }}</a>
+                                    </h3>
+                                    @php
+                                        $productCount = App\Models\Product::where('category_id', $category->id)->count();
+                                    @endphp
+                                    <span class="tp-category-main-item"> {{ $productCount }} Products</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-2.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Smart Watches</a>
-                            </h3>
-                            <span class="tp-category-main-item">07 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-3.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Laptops</a>
-                            </h3>
-                            <span class="tp-category-main-item">14 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-4.jpg')}}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Tablets</a>
-                            </h3>
-                            <span class="tp-category-main-item">19 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-5.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Desktop Computer</a>
-                            </h3>
-                            <span class="tp-category-main-item">26 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-6.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Bluetooth Earphones</a>
-                            </h3>
-                            <span class="tp-category-main-item">12 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-7.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Wireless Headphones</a>
-                            </h3>
-                            <span class="tp-category-main-item">33 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-8.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Gaming Console</a>
-                            </h3>
-                            <span class="tp-category-main-item">05 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-9.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">CPU Coolers</a>
-                            </h3>
-                            <span class="tp-category-main-item">21 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-10.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Smart Phones</a>
-                            </h3>
-                            <span class="tp-category-main-item">35 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-11.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Tablets</a>
-                            </h3>
-                            <span class="tp-category-main-item">27 Products</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="tp-category-main-box mb-25 p-relative fix" data-bg-color="#F3F5F7">
-                        <div class="tp-category-main-thumb include-bg transition-3"
-                            data-background="{{ asset('frontend/assets/img/category/main/category-main-12.jpg') }}"></div>
-                        <div class="tp-category-main-content">
-                            <h3 class="tp-category-main-title">
-                                <a href="{{ route('product')}}">Playstation</a>
-                            </h3>
-                            <span class="tp-category-main-item">08 Products</span>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @else
+                    <span>No Category</span>
+                @endif
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -232,7 +111,7 @@
                         </div>
                     </div>
                     <div class="tp-category-main-more text-center">
-                        <a href="{{ route('product')}}" class="tp-load-more-btn">
+                        <a href="{{ route('products') }}" class="tp-load-more-btn">
                             Load More
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

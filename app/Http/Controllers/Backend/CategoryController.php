@@ -29,7 +29,7 @@ class CategoryController extends Controller
         if ($request->file('category_image')) {
             $image = $request->file('category_image');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(76, 98)->save('upload/category_images/' . $name_gen);
+            Image::make($image)->resize(384, 420)->save('upload/category_images/' . $name_gen);
             $save_url = 'upload/category_images/' . $name_gen;
             $category = new Category();
             $category->name = $request->name;
@@ -66,7 +66,7 @@ class CategoryController extends Controller
             $image = $request->file('category_image');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-            Image::make($image)->resize(76, 98)->save('upload/category_images/' . $name_gen);
+            Image::make($image)->resize(384, 420)->save('upload/category_images/' . $name_gen);
             $save_url = 'upload/category_images/' . $name_gen;
 
             Category::findOrFail($categoryId)->update([

@@ -77,20 +77,42 @@ class ProductController extends Controller
     public function UpdateProduct(Request $request)
     {
         $productId = $request->id;
-        Product::findOrFail($productId)->update([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'category_id' => $request->category_id,
-            'sub_cat_id' => $request->sub_cat_id,
-            'product_code' => $request->product_code,
-            'description' => $request->description,
-            'image' => $request->image,
-        ]);
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(580, 670)->save('upload/product_images/' . $name_gen);
+            $save_url = 'upload/product_images/' . $name_gen;
+            Product::findOrFail($productId)->update([
+                'name' => $request->name,
+                'slug' => $request->slug,
+                'category_id' => $request->category_id,
+                'sub_cat_id' => $request->sub_cat_id,
+                'product_code' => $request->product_code,
+                'description' => $request->description,
+                'image' => $save_url,
+            ]);
 
-        $notification = array(
-            'message' => 'Product Updated Successfully',
-            'alert-type' => 'success'
-        );
+            $notification = array(
+                'message' => 'Product Updated Successfully',
+                'alert-type' => 'success'
+            );
+        }else{
+            Product::findOrFail($productId)->update([
+                'name' => $request->name,
+                'slug' => $request->slug,
+                'category_id' => $request->category_id,
+                'sub_cat_id' => $request->sub_cat_id,
+                'product_code' => $request->product_code,
+                'description' => $request->description,
+            ]);
+
+            $notification = array(
+                'message' => 'Product Updated Successfully Without Image',
+                'alert-type' => 'success'
+            );
+        }
+
+
         return redirect()->route('all.product')->with($notification);
     }
 
@@ -103,5 +125,5 @@ class ProductController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('all.product')->with($notification);
-    }//end method
+    } //end method
 }

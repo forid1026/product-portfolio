@@ -1,5 +1,8 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<style>
+
+</style>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <div class="app-main__inner">
         <!--breadcrumb-->
@@ -77,9 +80,12 @@
                                             {{ $product['sub_category']['name'] }}
                                         </td>
                                         <td>
-                                            {!! DNS1D::getBarcodeHTML("$product->product_code", 'C128',true) !!}
-                                            p - {{$product->product_code}}
+                                            {!! DNS1D::getBarcodeHTML("$product->product_code", 'C128') !!}
+                                            p - {{ $product->product_code }}
                                         </td>
+                                        @php
+                                            $link = 'http://127.0.0.1:8000/product-category/1';
+                                        @endphp
                                         <td>
                                             {!! $product->description !!}
                                         </td>

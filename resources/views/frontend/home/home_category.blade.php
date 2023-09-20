@@ -95,14 +95,7 @@
         <div class="row align-items-end">
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="tp-section-title-wrapper mb-40">
-                    <h3 class="tp-section-title"> Products Category
-                        <svg width="114" height="35" viewBox="0 0 114 35" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M112 23.275C1.84952 -10.6834 -7.36586 1.48086 7.50443 32.9053"
-                                stroke="currentColor" stroke-width="4" stroke-miterlimit="3.8637"
-                                stroke-linecap="round" />
-                        </svg>
-                    </h3>
+                    <h3 class="tp-section-title"> Products Category</h3>
                 </div>
             </div>
         </div>
@@ -112,16 +105,20 @@
                     <div class="col">
                         <div class="tp-product-category-item text-center mb-40">
                             <div class="tp-product-category-thumb fix">
-                                <a href="{{ route('product.category.name',$category->id) }}">
+                                <a href="{{ route('product.category.name', $category->id) }}">
                                     <img class="img-fluid" src="{{ asset($category->category_image) }}"
                                         alt="product-category">
                                 </a>
                             </div>
                             <div class="tp-product-category-content">
                                 <h3 class="tp-product-category-title">
-                                    <a href="{{ route('product.category') }}">{{$category->name}}</a>
+                                    <a
+                                        href="{{ route('product.category.name', $category->id) }}">{{ $category->name }}</a>
                                 </h3>
-                                <p>20 Product</p>
+                                @php
+                                    $productCount = App\Models\Product::where('category_id', $category->id)->count();
+                                @endphp
+                                <p>{{ $productCount }} Product</p>
                             </div>
                         </div>
                     </div>
