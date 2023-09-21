@@ -434,19 +434,19 @@
                                 <button class="nav-link active" id="nav-1-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-1"
                                     aria-selected="true">
-                                    <img src="assets/img/product/details/nav/product-details-nav-1.jpg" alt="">
+                                    <img src="{{ asset('frontend/assets/img/product/details/nav/product-details-nav-1.jpg')}}" alt="">
                                 </button>
                                 <button class="nav-link" id="nav-2-tab" data-bs-toggle="tab" data-bs-target="#nav-2"
                                     type="button" role="tab" aria-controls="nav-2" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-2.jpg" alt="">
+                                    <img src="{{ asset('frontend/assets/img/product/details/nav/product-details-nav-2.jpg')}}" alt="">
                                 </button>
                                 <button class="nav-link" id="nav-3-tab" data-bs-toggle="tab" data-bs-target="#nav-3"
                                     type="button" role="tab" aria-controls="nav-3" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-3.jpg" alt="">
+                                    <img src="{{ asset('frontend/assets/img/product/details/nav/product-details-nav-3.jpg')}}" alt="">
                                 </button>
                                 <button class="nav-link" id="nav-4-tab" data-bs-toggle="tab" data-bs-target="#nav-4"
                                     type="button" role="tab" aria-controls="nav-4" aria-selected="false">
-                                    <img src="assets/img/product/details/nav/product-details-nav-4.jpg" alt="">
+                                    <img src="{{ asset('frontend/assets/img/product/details/nav/product-details-nav-4.jpg')}}" alt="">
                                 </button>
                             </div>
                         </nav>
@@ -479,7 +479,7 @@
                     </div>
                     <div class="tp-product-details-wrapper">
                         <div class="tp-product-details-category">
-                            <span>Computers & Tablets</span>
+                            <span>{{ $product['category']['name'] }}</span>
                         </div>
                         <h3 class="tp-product-details-title">Samsung galaxy A8 tablet</h3>
 
@@ -501,8 +501,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p>A Screen Everyone Will Love: Whether your family is streaming or video chatting with friends
-                            tablet A8... <span>See more</span></p>
+                        <p>{!! $product->description !!}</p>
 
                         <!-- price -->
                         <div class="tp-product-details-price-wrapper mb-20">

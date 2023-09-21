@@ -125,7 +125,7 @@
                                          <h3 class="tp-history-title">About our <br> Online Store</h3>
                                          <p>At our eCommerce site, we are passionate about providing our customers with the best possible shopping experience. From our extensive product selection to our exceptional customer service, we are committed to exceeding your expectations.</p>
                                          <p>So start browsing today and find the perfect products to suit your needs!</p>
-                 
+
                                       </div>
                                       <div class="tp-history-year">
                                          <p>2016</p>
@@ -152,7 +152,7 @@
                                          <h3 class="tp-history-title">About our <br> Online Store</h3>
                                          <p>At our eCommerce site, we are passionate about providing our customers with the best possible shopping experience. From our extensive product selection to our exceptional customer service, we are committed to exceeding your expectations.</p>
                                          <p>So start browsing today and find the perfect products to suit your needs!</p>
-                 
+
                                       </div>
                                       <div class="tp-history-year">
                                          <p>2017</p>
@@ -179,7 +179,7 @@
                                          <h3 class="tp-history-title">About our <br> Online Store</h3>
                                          <p>At our eCommerce site, we are passionate about providing our customers with the best possible shopping experience. From our extensive product selection to our exceptional customer service, we are committed to exceeding your expectations.</p>
                                          <p>So start browsing today and find the perfect products to suit your needs!</p>
-                 
+
                                       </div>
                                       <div class="tp-history-year">
                                          <p>2018</p>
@@ -206,7 +206,7 @@
                                          <h3 class="tp-history-title">About our <br> Online Store</h3>
                                          <p>At our eCommerce site, we are passionate about providing our customers with the best possible shopping experience. From our extensive product selection to our exceptional customer service, we are committed to exceeding your expectations.</p>
                                          <p>So start browsing today and find the perfect products to suit your needs!</p>
-                 
+
                                       </div>
                                       <div class="tp-history-year">
                                          <p>2019</p>
@@ -230,7 +230,7 @@
                  </div>
               </div>
            </div>
-           
+
            <div class="tp-history-nav">
               <div class="row">
                  <div class="col-xl-12">

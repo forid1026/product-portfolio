@@ -17,6 +17,13 @@
                                     <a href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li><a href="{{ route('about.us') }}">About Us</a></li>
+                                <li class="has-dropdown">
+                                    <a href="{{ route('distributors') }}">Distributors</a>
+                                    <ul class="tp-submenu">
+                                        <li><a href="{{ route('distributors') }}">Distributors</a></li>
+                                        <li><a href="{{ route('distributors.apply') }}">Apply For</a></li>
+                                    </ul>
+                                </li>
                                 <li class="has-dropdown has-mega-menu ">
 
                                     <a href="shop.html">Products</a>

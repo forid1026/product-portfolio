@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +13,8 @@ class HomeController extends Controller
     public function Home()
     {
         $products = Product::Orderby('name', 'asc')->get();
-        return view('frontend.index', compact('products'));
+        $sliders = Slider::all();
+        return view('frontend.index', compact('products','sliders'));
     } //end method
 
 
@@ -35,6 +37,18 @@ class HomeController extends Controller
     public function ContactUs()
     {
         return view('frontend.contact');
+    } //end method
+
+
+    public function Distributors()
+    {
+        return view('frontend.distributors.distributor');
+    } //end method
+
+
+    public function DistributorApply()
+    {
+        return view('frontend.distributors.distributor_apply');
     } //end method
 
 

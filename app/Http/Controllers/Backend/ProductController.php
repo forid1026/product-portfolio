@@ -37,7 +37,7 @@ class ProductController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(282, 242)->save('upload/product_images/' . $name_gen);
+            Image::make($image)->resize(580, 670)->save('upload/product_images/' . $name_gen);
             $save_url = 'upload/product_images/' . $name_gen;
             $product = new Product();
             $product->name = $request->name;

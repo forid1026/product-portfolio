@@ -93,6 +93,32 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-plugin"></i>All Contact
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('all.contact') }}">
+                                <i class="metismenu-icon"></i>All Contact
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-plugin"></i>All Distributor
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('all.distributor') }}">
+                                <i class="metismenu-icon"></i>All Distributor
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 {{-- <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-browser"></i>Pages

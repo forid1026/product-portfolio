@@ -29,13 +29,13 @@
                             <h3 class="tp-contact-title">Sent A Message</h3>
 
                             <div class="tp-contact-form">
-                                <form id="contact-form"
-                                    action="https://weblearnbd.net/tphtml/shofy-prv/shofy/assets/mail.php" method="POST">
+                                <form id="form" action="{{ route('store.contact') }}" method="POST">
+                                    @csrf
                                     <div class="tp-contact-input-wrapper">
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="name" id="name" type="text"
-                                                    placeholder="Shahnewaz Sakil">
+                                                    placeholder="Enter Your Name" required data-parsley-required-message="Name is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="name">Your Name</label>
@@ -44,7 +44,7 @@
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="email" id="email" type="email"
-                                                    placeholder="shofy@mail.com">
+                                                    placeholder="Enter Your Email" required data-parsley-required-message="Email is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="email">Your Email</label>
@@ -53,7 +53,7 @@
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="subject" id="subject" type="text"
-                                                    placeholder="Write your subject">
+                                                    placeholder="Write your subject" required data-parsley-required-message="Subject is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="subject">Subject</label>
@@ -61,25 +61,17 @@
                                         </div>
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
-                                                <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+                                                <textarea id="message" name="message" required data-parsley-required-message="Message is required" placeholder="Write your message here..."></textarea>
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="message">Your Message</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tp-contact-suggetions mb-20">
-                                        <div class="tp-contact-remeber">
-                                            <input id="remeber" type="checkbox">
-                                            <label for="remeber">Save my name, email, and website in this browser for the
-                                                next time I comment.</label>
-                                        </div>
-                                    </div>
                                     <div class="tp-contact-btn">
                                         <button type="submit">Send Message</button>
                                     </div>
                                 </form>
-                                <p class="ajax-response"></p>
                             </div>
                         </div>
                     </div>
@@ -161,4 +153,7 @@
         </div>
     </section>
     <!-- map area end -->
+    <script>
+        $('#form').parsley();
+    </script>
 @endsection

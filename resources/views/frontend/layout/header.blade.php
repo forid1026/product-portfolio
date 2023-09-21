@@ -9,8 +9,8 @@
                             <span>
                                 <svg width="22" height="19" viewBox="0 0 22 19" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.6364 1H1V12.8182H14.6364V1Z" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.6364 1H1V12.8182H14.6364V1Z" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M14.6364 5.54545H18.2727L21 8.27273V12.8182H14.6364V5.54545Z"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
@@ -45,8 +45,7 @@
                                     </ul>
                                 </div>
                                 <div class="tp-header-top-menu-item tp-header-currency">
-                                    <span class="tp-header-currency-toggle"
-                                        id="tp-header-currency-toggle">USD</span>
+                                    <span class="tp-header-currency-toggle" id="tp-header-currency-toggle">USD</span>
                                     <ul>
                                         <li>
                                             <a href="#">EUR</a>
@@ -63,8 +62,7 @@
                                     </ul>
                                 </div>
                                 <div class="tp-header-top-menu-item tp-header-setting">
-                                    <span class="tp-header-setting-toggle"
-                                        id="tp-header-setting-toggle">Setting</span>
+                                    <span class="tp-header-setting-toggle" id="tp-header-setting-toggle">Setting</span>
                                     <ul>
                                         <li>
                                             <a href="profile.html">My Profile</a>
@@ -242,20 +240,29 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="{{ route('home')}}">
-                                    <img src="{{ asset('frontend/assets/img/logo/logo.svg')}}" alt="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('frontend/assets/img/logo/logo.svg') }}" alt="logo">
+                                    {{-- <img src="{{ asset('frontend/assets/img/logo/logo-new.png') }}" alt="logo"> --}}
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="col-xl-6 col-lg-6">
                             <div class="main-menu menu-style-1">
                                 <nav class="tp-main-menu-content">
                                     <ul>
                                         <li class="">
-                                            <a href="{{ route('home')}}">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
                                         </li>
-                                        <li><a href="{{ route('about.us')}}">About Us</a></li>
+                                        <li><a href="{{ route('about.us') }}">About Us</a></li>
+
+                                        <li class="has-dropdown">
+                                            <a href="{{route('distributors') }}">Distributors</a>
+                                            <ul class="tp-submenu">
+                                                <li><a href="{{ route('distributors') }}">Distributors</a></li>
+                                                <li><a href="{{ route('distributors.apply') }}">Apply For</a></li>
+                                            </ul>
+                                        </li>
 
                                         {{-- <li class="has-dropdown has-mega-menu">
                                             <a href="shop.html">Shop</a>
@@ -359,8 +366,7 @@
                                                 </li>
                                                 <!-- third col -->
                                                 <li class="has-dropdown">
-                                                    <a href="product-details.html"
-                                                        class="mega-menu-title">Products</a>
+                                                    <a href="product-details.html" class="mega-menu-title">Products</a>
                                                     <ul class="tp-submenu">
 
                                                         <li><a href="product-details.html">Product Simple</a></li>
@@ -418,7 +424,7 @@
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
                                         </li> --}}
-                                        <li><a href="{{ route('contact.us')}}">Contact</a></li>
+                                        <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -433,12 +439,10 @@
                                                 d="M1.96977 3.24859C2.26945 2.75144 3.92158 0.946726 5.09889 1.00121C5.45111 1.03137 5.76246 1.24346 6.01544 1.49057H6.01641C6.59631 2.05874 8.26011 4.203 8.35352 4.65442C8.58411 5.76158 7.26378 6.39979 7.66756 7.5157C8.69698 10.0345 10.4707 11.8081 12.9908 12.8365C14.1058 13.2412 14.7441 11.9219 15.8513 12.1515C16.3028 12.2459 18.4482 13.9086 19.0155 14.4894V14.4894C19.2616 14.7414 19.4757 15.0537 19.5049 15.4059C19.5487 16.6463 17.6319 18.3207 17.2583 18.5347C16.3767 19.1661 15.2267 19.1544 13.8246 18.5026C9.91224 16.8749 3.65985 10.7408 2.00188 6.68096C1.3675 5.2868 1.32469 4.12906 1.96977 3.24859Z"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                 stroke-linejoin="round" />
-                                            <path
-                                                d="M12.936 1.23685C16.4432 1.62622 19.2124 4.39253 19.6065 7.89874"
+                                            <path d="M12.936 1.23685C16.4432 1.62622 19.2124 4.39253 19.6065 7.89874"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                 stroke-linejoin="round" />
-                                            <path
-                                                d="M12.936 4.59337C14.6129 4.92021 15.9231 6.23042 16.2499 7.90726"
+                                            <path d="M12.936 4.59337C14.6129 4.92021 15.9231 6.23042 16.2499 7.90726"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>

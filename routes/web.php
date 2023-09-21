@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
@@ -88,6 +90,18 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('edit/slider/{id}', 'EditSlider')->name('edit.slider');
         Route::get('delete/slider/{id}', 'DeleteSlider')->name('delete.slider');
     });
+
+    // Contact all method
+    Route::controller(ContactController::class)->group(function () {
+        Route::get('all/contact', 'AllContact')->name('all.contact');
+        Route::get('delete/contact/{id}', 'DeleteContact')->name('delete.contact');
+    });
+
+    // Distributor all method
+    Route::controller(DistributorController::class)->group(function () {
+        Route::get('all/distributor', 'AllDistributor')->name('all.distributor');
+        Route::get('delete/distributor/{id}', 'DeleteDistributor')->name('delete.distributor');
+    });
 });
 
 
@@ -108,7 +122,19 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('product/category', 'ProductCategory')->name('product.category');
     Route::get('product-category/{slug}', 'ProductCategoryByName')->name('product.category.name');
     Route::get('contact-us', 'ContactUs')->name('contact.us');
+    Route::get('distributors', 'Distributors')->name('distributors');
+    Route::get('distributors/apply', 'DistributorApply')->name('distributors.apply');
     Route::get('about-us', 'AboutUs')->name('about.us');
     Route::get('products', 'Product')->name('products');
     Route::get('product/{slug}', 'ProductDetails')->name('product.details');
+});
+
+// contact controller for frontend
+Route::controller(ContactController::class)->group(function () {
+    Route::post('store/contact', 'StoreContact')->name('store.contact');
+});
+
+// distributor controller for frontend
+Route::controller(DistributorController::class)->group(function () {
+    Route::post('store/distributor', 'StoreDistributor')->name('store.distributor');
 });

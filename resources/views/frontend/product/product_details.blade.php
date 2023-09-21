@@ -181,6 +181,8 @@
                         <h3 class="tp-product-details-title">{{ $product->name }}</h3>
 
                         <p>{!! $product->description !!}</p>
+                        <a href="{{ route('product.details', $product->slug) }}"
+                            class="tp-product-details-buy-now-btn w-100">Product Details</a>
                     </div>
                 </div>
             </div>
