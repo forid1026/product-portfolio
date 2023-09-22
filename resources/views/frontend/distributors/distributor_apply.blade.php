@@ -40,7 +40,8 @@
                                 you provided</h3>
 
                             <div class="tp-contact-form">
-                                <form id="form" action="{{ route('store.distributor')}}" class="distributor-form" method="POST">
+                                <form id="form" action="{{ route('store.distributor') }}" class="distributor-form"
+                                    method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-12">
@@ -49,9 +50,9 @@
                                                 data-parsley-required-message="Name is required">
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-sm-12">
-                                            <input type="email" placeholder="Enter Your Email" id="email"
-                                                name="email" class="form-control" required
-                                                data-parsley-required-message="Email is required">
+                                            <input type="text" placeholder="Enter Your Facebook URL" id="facebook_url"
+                                                name="facebook_url" class="form-control" required
+                                                data-parsley-required-message="Facebook URL is required">
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-sm-12">
                                             <input type="tel" placeholder="Enter Your Phone" id="phone"
@@ -81,7 +82,7 @@
                                         </div>
                                     </div>
                                     <div class="tp-contact-btn">
-                                        <button type="submit">Send Message</button>
+                                        <button type="submit">Submit To Be A Distributor</button>
                                     </div>
                                 </form>
                                 <p class="ajax-response"></p>

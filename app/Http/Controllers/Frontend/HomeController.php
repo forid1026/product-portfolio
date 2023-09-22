@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Distributor;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class HomeController extends Controller
     {
         $products = Product::Orderby('name', 'asc')->get();
         $sliders = Slider::all();
-        return view('frontend.index', compact('products','sliders'));
+        return view('frontend.index', compact('products', 'sliders'));
     } //end method
 
 
@@ -42,7 +43,8 @@ class HomeController extends Controller
 
     public function Distributors()
     {
-        return view('frontend.distributors.distributor');
+        $distributors = Distributor::where('status', '1')->latest()->get();
+        return view('frontend.distributors.distributor', compact('distributors'));
     } //end method
 
 
@@ -69,6 +71,6 @@ class HomeController extends Controller
         $productInfo = Product::where('slug', $slug)->first();
         $categoryInfo = Category::where('id', $productInfo->category_id)->first();
         $relatedProducts = Product::where('category_id', $productInfo->category_id)->get();
-        return view('frontend.product.product_details', compact('productInfo','relatedProducts'));
+        return view('frontend.product.product_details', compact('productInfo', 'relatedProducts'));
     }
 }

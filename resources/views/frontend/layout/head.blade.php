@@ -1,11 +1,11 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Shofy - Multipurpose eCommerce HTML Template</title>
+<title>Angel Rose Beauty Care BD</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Place favicon.ico in the root directory -->
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/logo/favicon.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/logo/logo.png') }}">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.css') }}">

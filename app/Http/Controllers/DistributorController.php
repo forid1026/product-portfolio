@@ -28,17 +28,33 @@ class DistributorController extends Controller
 
     public function StoreDistributor(Request $request)
     {
-        $contact = new Distributor();
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->phone = $request->phone;
-        $contact->province = $request->province;
-        $contact->city = $request->city;
-        $contact->package = $request->distributor_package;
-        $contact->created_at = Carbon::now();
-        $contact->save();
+        $distributor = new Distributor();
+        $distributor->name = $request->name;
+        $distributor->facebook_url = $request->facebook_url;
+        $distributor->phone = $request->phone;
+        $distributor->province = $request->province;
+        $distributor->city = $request->city;
+        $distributor->package = $request->distributor_package;
+        $distributor->created_at = Carbon::now();
+        $distributor->save();
 
         Alert::success('Success', 'Distributor Form Submitted Successfully');
         return redirect()->back();
     } //end method
+
+
+    public function StatusChangeDistributor($id)
+    {
+        $distributor = Distributor::findOrFail($id);
+
+        $distributor->update([
+            'status' => '1',
+        ]);
+
+        $notification = array(
+            'message' => 'Distributor Status Change Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.distributor')->with($notification);
+    }
 }

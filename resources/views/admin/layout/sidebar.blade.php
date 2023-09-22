@@ -36,24 +36,29 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li class="mm-active">
-                    <a href="{{ route('admin.dashboard')}}">
+                    <a href="{{ route('admin.dashboard') }}">
                         <i class="metismenu-icon pe-7s-home"></i>Dashboards
                     </a>
                 </li>
                 <hr>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-plugin"></i>Slider
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('all.slider') }}">
-                                <i class="metismenu-icon"></i>All Slide
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Auth::user()->can('slider.menu'))
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-plugin"></i>Slider
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            @if (Auth::user()->can('slider.list'))
+                            <li>
+                                <a href="{{ route('all.slider') }}">
+                                    <i class="metismenu-icon"></i>All Slide
+                                </a>
+                            </li>
+                            @endif
+                        </ul>
+                    </li>
+                @endif
+
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-plugin"></i>Category
@@ -119,6 +124,49 @@
                         </li>
                     </ul>
                 </li>
+
+
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-plugin"></i>Role & Permission
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('all.permission') }}">
+                                <i class="metismenu-icon"></i>All Permission
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('all.role') }}">
+                                <i class="metismenu-icon"></i>All Role
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('all.role.permission') }}">
+                                <i class="metismenu-icon"></i>All Role Permission
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                @if (Auth::user()->can('admin.menu'))
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-plugin"></i>Admin Manage
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{ route('all.admin') }}">
+                                    <i class="metismenu-icon"></i>All Admin
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
+
                 {{-- <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-browser"></i>Pages

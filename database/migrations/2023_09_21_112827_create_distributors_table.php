@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('distributors', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('email')->nullable();
+            $table->string('facebook_url')->nullable();
             $table->string('phone')->nullable();
             $table->string('province')->nullable();
             $table->string('city')->nullable();
             $table->string('package')->nullable();
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
     }

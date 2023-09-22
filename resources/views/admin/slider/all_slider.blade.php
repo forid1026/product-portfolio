@@ -22,9 +22,11 @@
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">All Slide</h6>
             <h6 class="m-0 font-weight-bold text-primary">
-                <a href="{{ route('add.slider') }}">
-                    <button class="btn btn-info">Add Slide</button>
-                </a>
+                @if (Auth::user()->can('slider.add'))
+                    <a href="{{ route('add.slider') }}">
+                        <button class="btn btn-info">Add Slide</button>
+                    </a>
+                @endif
             </h6>
         </div>
         <!--end breadcrumb-->
@@ -56,15 +58,19 @@
                                             <img src="{{ asset($slide->slider_image) }}" width="80" alt="">
                                         </td>
                                         <td style="display:flex">
-                                            <a title="Edit Slide" style="margin-left: 5px;"
-                                                href="{{ route('edit.slider', $slide->id) }}" class="btn btn-info">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a title="Delete Category" id="delete" style="margin-left: 5px;"
-                                                href="{{ route('delete.slider', $slide->id) }}" class="btn btn-danger"
-                                                title="Delete Slide">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
+                                            @if (Auth::user()->can('slider.edit'))
+                                                <a title="Edit Slide" style="margin-left: 5px;"
+                                                    href="{{ route('edit.slider', $slide->id) }}" class="btn btn-info">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            @endif
+                                            @if (Auth::user()->can('slider.delete'))
+                                                <a title="Delete Category" id="delete" style="margin-left: 5px;"
+                                                    href="{{ route('delete.slider', $slide->id) }}" class="btn btn-danger"
+                                                    title="Delete Slide">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

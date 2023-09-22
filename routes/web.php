@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DistributorController;
@@ -101,6 +102,47 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DistributorController::class)->group(function () {
         Route::get('all/distributor', 'AllDistributor')->name('all.distributor');
         Route::get('delete/distributor/{id}', 'DeleteDistributor')->name('delete.distributor');
+        Route::get('status/change/distributor/{id}', 'StatusChangeDistributor')->name('status.change.distributor');
+    });
+
+
+    // permission all route
+    Route::controller(RoleController::class)->group(function () {
+        Route::get('/all/permission', 'AllPermission')->name('all.permission');
+        Route::get('/add/permission', 'AddPermission')->name('add.permission');
+        Route::post('/store/permission', 'StorePermission')->name('store.permission');
+        Route::post('/update/permission', 'UpdatePermission')->name('update.permission');
+        Route::get('/edit/permission/{id}', 'EditPermission')->name('edit.permission');
+        Route::get('/delete/permission/{id}', 'DeletePermission')->name('delete.permission');
+    });
+
+    // role  all route
+    Route::controller(RoleController::class)->group(function () {
+        Route::get('/all/role', 'AllRole')->name('all.role');
+        Route::get('/add/role', 'AddRole')->name('add.role');
+        Route::post('/store/role', 'StoreRole')->name('store.role');
+        Route::post('/update/role', 'UpdateRole')->name('update.role');
+        Route::get('/edit/role/{id}', 'EditRole')->name('edit.role');
+        Route::get('/delete/role/{id}', 'DeleteRole')->name('delete.role');
+
+        // role in permission
+        Route::get('/add/role/permission', 'AddRolepermission')->name('add.role.permission');
+        Route::get('/all/role/permission', 'AllRolepermission')->name('all.role.permission');
+        Route::post('/store/role/permission', 'StoreRolepermission')->name('role.permission.store');
+        Route::get('admin/edit/role/{id}', 'AdminEditRole')->name('admin.edit.role');
+        Route::post('/admin/role/update/{id}', 'AdminUpdateRole')->name('admin.role.update');
+        Route::get('admin/delete/role/{id}', 'AdminDeleteRole')->name('admin.delete.role');
+    });
+    // end role all route
+
+    // employee all route
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/admin/all', 'AdminAll')->name('all.admin');
+        Route::get('/admin/add', 'AdminAdd')->name('add.admin');
+        Route::post('/admin/store', 'AdminStore')->name('store.admin');
+        Route::get('/edit/admin/role/{id}', 'EditAdminRole')->name('edit.admin.role');
+        Route::post('/update/admin/role', 'UpdateAdminRole')->name('update.admin.role');
+        Route::get('/delete/admin/role/{id}', 'DeleteAdminRole')->name('delete.admin.role');
     });
 });
 

@@ -1,7 +1,7 @@
 <header>
     <div class="tp-header-area p-relative z-index-11">
         <!-- header top start  -->
-        <div class="tp-header-top black-bg p-relative z-index-1 d-none d-md-block">
+        {{-- <div class="tp-header-top black-bg p-relative z-index-1 d-none d-md-block">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- header main start -->
         {{-- <div class="tp-header-main tp-header-sticky">
@@ -234,15 +234,14 @@
         </div> --}}
 
         <!-- header bottom start -->
-        <div class="tp-header-bottom tp-header-bottom-border d-none d-lg-block py-3">
+        <div class="tp-header-bottom tp-header-bottom-border d-none d-lg-block">
             <div class="container">
                 <div class="tp-mega-menu-wrapper p-relative">
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('frontend/assets/img/logo/logo.svg') }}" alt="logo">
-                                    {{-- <img src="{{ asset('frontend/assets/img/logo/logo-new.png') }}" alt="logo"> --}}
+                                    <img src="{{ asset('frontend/assets/img/logo/logo.png') }}" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -257,7 +256,7 @@
                                         <li><a href="{{ route('about.us') }}">About Us</a></li>
 
                                         <li class="has-dropdown">
-                                            <a href="{{route('distributors') }}">Distributors</a>
+                                            <a href="{{ route('distributors') }}">Distributors</a>
                                             <ul class="tp-submenu">
                                                 <li><a href="{{ route('distributors') }}">Distributors</a></li>
                                                 <li><a href="{{ route('distributors.apply') }}">Apply For</a></li>
@@ -346,73 +345,9 @@
                                                 </div>
                                             </div>
                                         </li> --}}
-                                        <li class="has-dropdown has-mega-menu ">
+                                        <li class="">
 
-                                            <a href="shop.html">Products</a>
-                                            <ul class="tp-submenu tp-mega-menu mega-menu-style-2">
-                                                <!-- first col -->
-                                                <li class="has-dropdown">
-                                                    <a href="shop.html" class="mega-menu-title">Shop Page</a>
-                                                    <ul class="tp-submenu">
-                                                        <li><a href="shop-category.html">Only Categories</a></li>
-                                                        <li><a href="shop-filter-offcanvas.html">Shop Grid</a></li>
-                                                        <li><a href="shop.html">Shop Grid with Sideber</a></li>
-                                                        <li><a href="shop-list.html">Shop List</a></li>
-                                                        <li><a href="shop-category.html">Categories</a></li>
-                                                        <li><a href="product-details.html">Product Details</a></li>
-                                                        <li><a href="product-details-progress.html">Product Details
-                                                                Progress</a></li>
-                                                    </ul>
-                                                </li>
-                                                <!-- third col -->
-                                                <li class="has-dropdown">
-                                                    <a href="product-details.html" class="mega-menu-title">Products</a>
-                                                    <ul class="tp-submenu">
-
-                                                        <li><a href="product-details.html">Product Simple</a></li>
-                                                        <li><a href="product-details-video.html">With Video</a>
-                                                        </li>
-                                                        <li><a href="product-details-countdown.html">With Countdown
-                                                                Timer</a></li>
-                                                        <li><a href="product-details-presentation.html">Product
-                                                                Presentation</a></li>
-                                                        <li><a href="product-details-swatches.html">Variations
-                                                                Swatches</a></li>
-                                                        <li><a href="product-details-list.html">List View</a></li>
-                                                        <li><a href="product-details-gallery.html">Details
-                                                                Gallery</a></li>
-                                                        <li><a href="product-details-slider.html">With Slider</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <!-- third col -->
-                                                <li class="has-dropdown">
-                                                    <a href="shop.html" class="mega-menu-title">eCommerce</a>
-                                                    <ul class="tp-submenu">
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="order.html">Track Your Order</a></li>
-                                                        <li><a href="compare.html">Compare</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="profile.html">My account</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <!-- second col -->
-                                                <li class="has-dropdown">
-                                                    <a href="shop.html" class="mega-menu-title">More Pages</a>
-                                                    <ul class="tp-submenu">
-
-
-                                                        <li><a href="about.html">About</a></li>
-                                                        <li><a href="login.html">Login</a></li>
-                                                        <li><a href="register.html">Register</a></li>
-                                                        <li><a href="forgot.html">Forgot Password</a></li>
-                                                        <li><a href="404.html">404 Error</a></li>
-                                                    </ul>
-                                                </li>
-
-                                            </ul>
+                                            <a href="{{ route('products') }}">Products</a>
                                         </li>
                                         {{-- <li class="has-dropdown">
                                             <a href="blog.html">Blog</a>
@@ -450,7 +385,7 @@
                                 </div>
                                 <div class="tp-header-contact-content">
                                     <h5>Hotline:</h5>
-                                    <p><a href="tel:402-763-282-46">+(402) 763 282 46</a></p>
+                                    <p><a href="tel:01701111120">+880 170 111 1120</a></p>
                                 </div>
                             </div>
                         </div>

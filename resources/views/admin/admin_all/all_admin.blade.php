@@ -4,14 +4,14 @@
     <div class="app-main__inner">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">All Distributor</div>
+            <div class="breadcrumb-title pe-3">Admin All</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;" class="text-light"><i
                                     class="bx bx-home-alt text-light"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Distributor All</li>
+                        <li class="breadcrumb-item active" aria-current="page">Admin All</li>
                     </ol>
                 </nav>
             </div>
@@ -20,7 +20,12 @@
 
         <!--breadcrumb-->
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-primary">All Distributor</h6>
+            <h6 class="m-0 font-weight-bold text-primary">All Admin</h6>
+            <h6 class="m-0 font-weight-bold text-primary">
+                <a href="{{ route('add.admin') }}">
+                    <button class="btn btn-info">Add Admin</button>
+                </a>
+            </h6>
         </div>
         <!--end breadcrumb-->
         <div class="row">
@@ -35,9 +40,8 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Province</th>
-                                    <th>City</th>
-                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -47,52 +51,43 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Province</th>
-                                    <th>City</th>
-                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                @foreach ($allDistributor as $key => $distributor)
+                                @foreach ($allAdmin as $key => $admin)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>
-                                            {{ $distributor->name }}
+                                            {{ $admin->name }}
                                         </td>
                                         <td>
-                                            {{ $distributor->facebook_url }}
+                                            {{ $admin->email }}
                                         </td>
                                         <td>
-                                            {{ $distributor->phone }}
+                                            {{ $admin->phone }}
                                         </td>
                                         <td>
-                                            {{ $distributor->province }}
+                                            @foreach ($admin->roles as $role)
+                                                <span class="badge badge-pill bg-danger text-light">
+                                                    {{ $role->name }}
+                                                </span>
+                                            @endforeach
                                         </td>
                                         <td>
-                                            {{ $distributor->city }}
-                                        </td>
-                                        <td>
-                                            @if ($distributor->status == '0')
-                                                <span class="badge badge-pill rounded bg-danger text-light">Pending</span>
-                                            @elseif($distributor->status == '1')
-                                                <span class="badge badge-pill rounded bg-success text-light">Approved</span>
-                                            @endif
+                                            <img src="{{ !empty($admin->photo) ? url('upload/admin_images/' . $admin->photo) : url('upload/no-image.jpg') }}"
+                                                class="rounded-circle" width="46" height="46" alt="" />
                                         </td>
                                         <td style="display:flex">
-                                            @if ($distributor->status == '0')
-                                                <a title="Change Distributor Status" id="statusChange"
-                                                    style="margin-left: 5px;"
-                                                    href="{{ route('status.change.distributor', $distributor->id) }}"
-                                                    class="btn btn-info" title="Delete Contact">
-                                                    <i class="fas fa-thumbs-up    "></i>
-                                                    Change Status
-                                                </a>
-                                            @endif
-
-                                            <a title="Delete Distributor" id="delete" style="margin-left: 5px;"
-                                                href="{{ route('delete.distributor', $distributor->id) }}"
-                                                class="btn btn-danger" title="Delete Contact">
+                                            <a title="Edit Admin" style="margin-left: 5px;"
+                                                href="{{ route('edit.admin.role', $admin->id) }}" class="btn btn-info">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a title="Delete Admin" id="delete" style="margin-left: 5px;"
+                                                href="{{ route('delete.admin.role', $admin->id) }}" class="btn btn-danger"
+                                                title="Delete Employee">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </td>

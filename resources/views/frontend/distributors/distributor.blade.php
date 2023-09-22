@@ -17,15 +17,30 @@
         </div>
     </section>
     <!-- breadcrumb area end -->
-    <section class="tp-distributor-area pt-140 pb-140">
+    <section class="tp-distributor-area pt-30">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                    <h5 class="text-center text-muted">These are the provinces and cities where we distribute. Please click and select the distributor
-                        near your area. You will see their shopee and facebook links. If you are interested to be a
-                        distributor please apply here or chat with us. For International Applications you can apply
-                        here.</h5>
-                </div>
+                @foreach ($distributors as $distributor)
+                    <div class="col-md-4 col-sm-12 col-lg-4 mb-40">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="distributor-wrapper">
+                                    <div class="distributor-image">
+                                        <img class="img-thumbnail img-fluid"
+                                            src="{{ asset('upload/distributor_images/distributor-1.jpg') }}" alt="">
+                                    </div>
+                                    <div class="distributor-information py-3">
+                                        <h5>{{ $distributor->name }}</h5>
+                                        <p class="fw-thin fs-5">{{ $distributor->package }} - {{ $distributor->province }}
+                                        </p>
+                                        <a target="_blank" class="btn btn-dark"
+                                            href="{{ $distributor->facebook_url }}">Chat</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
