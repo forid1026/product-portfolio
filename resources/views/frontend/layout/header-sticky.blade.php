@@ -6,7 +6,7 @@
                     <div class="logo">
                         <a href="{{ route('home') }}">
                             {{-- <img src="{{ asset('frontend/assets/img/logo/logo.svg') }}" alt="logo"> --}}
-                            <img src="{{ asset('frontend/assets/img/logo/logo.png') }}" alt="logo">
+                            <img class="w-25" src="{{ asset('frontend/assets/img/logo/logo.png') }}" alt="logo">
 
                         </a>
                     </div>

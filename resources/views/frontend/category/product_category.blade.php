@@ -1,7 +1,7 @@
 @extends('frontend.layout.main_master')
 @section('frontend')
     <!-- breadcrumb area start -->
-    <section class="breadcrumb__area include-bg pt-100 pb-50">
+    <section class="breadcrumb__area include-bg text-center pt-100 pb-50">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -19,7 +19,7 @@
     <!-- breadcrumb area end -->
 
     <!-- banner area start -->
-    <section class="tp-banner-area pb-30">
+    {{-- <section class="tp-banner-area pb-30">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- banner area end -->
 
     <!-- category area start -->

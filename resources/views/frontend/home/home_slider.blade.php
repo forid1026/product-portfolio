@@ -1,34 +1,22 @@
+<!-- slider area start -->
 <section class="tp-slider-area p-relative z-index-1">
     <div class="tp-slider-active tp-slider-variation swiper-container">
         <div class="swiper-wrapper">
-            {{-- <div class="tp-slider-item tp-slider-height d-flex align-items-center swiper-slide green-dark-bg">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-12 col-lg-12 col-md-12">
-                            <div class="tp-slider-thumb text-end">
-                                <img src="{{ asset('frontend/assets/img/slider/slider-img-2.png')}}" alt="slider-img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
             @foreach ($sliders as $slide)
-                <div class="tp-slider-item tp-slider-height d-flex align-items-center swiper-slide green-dark-bg m-0">
+                <div class="tp-slider-item is-light d-flex align-items-center swiper-slide">
                     <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                {{-- <div class="tp-slider-thumb text-end">
-                            </div> --}}
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 p-0">
                                 <div class="slider-image">
-                                    <img src="{{ asset($slide->slider_image) }}" alt="slider-img">
-                                    {{-- <img src="{{ asset('frontend/assets/img/slider/slider-img-1.png')}}" alt="slider-img"> --}}
+                                    <img class="img-fluid" src="{{ asset($slide->slider_image) }}" alt="slider-img">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+
         </div>
         <div class="tp-slider-arrow tp-swiper-arrow d-none d-lg-block">
             <button type="button" class="tp-slider-button-prev">
@@ -47,3 +35,4 @@
         <div class="tp-slider-dot tp-swiper-dot"></div>
     </div>
 </section>
+<!-- slider area end -->

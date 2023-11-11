@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\SubCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -93,6 +94,7 @@ class CategoryController extends Controller
 
     public function DeleteCategory($id)
     {
+
         $categoryImg = Category::findOrFail($id);
         if ($categoryImg->category_image != null) {
             $img = $categoryImg->category_image;
@@ -101,6 +103,8 @@ class CategoryController extends Controller
 
         Category::findOrFail($id)->delete();
         SubCategory::where('category_id', $id)->delete();
+        Product::where('category_id', $id)->delete();
+
 
         $notification = array(
             'message' => 'Category Deleted Successfully',

@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
     public function AllSubCategory()
     {
         $allSubCategory = SubCategory::all();
-        return view('admin.sub_category.all_Sub_category', compact('allSubCategory'));
+        return view('admin.sub_category.all_sub_category', compact('allSubCategory'));
     } //end method
 
 

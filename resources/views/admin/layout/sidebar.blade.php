@@ -49,29 +49,33 @@
                         </a>
                         <ul>
                             @if (Auth::user()->can('slider.list'))
-                            <li>
-                                <a href="{{ route('all.slider') }}">
-                                    <i class="metismenu-icon"></i>All Slide
-                                </a>
-                            </li>
+                                <li>
+                                    <a href="{{ route('all.slider') }}">
+                                        <i class="metismenu-icon"></i>All Slide
+                                    </a>
+                                </li>
                             @endif
                         </ul>
                     </li>
                 @endif
 
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-plugin"></i>Category
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('all.category') }}">
-                                <i class="metismenu-icon"></i>All Category
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Auth::user()->can('category.menu'))
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-plugin"></i>Category
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            @if (Auth::user()->can('category.list'))
+                                <li>
+                                    <a href="{{ route('all.category') }}">
+                                        <i class="metismenu-icon"></i>All Category
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
+                    </li>
+                @endif
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-plugin"></i>Sub Category

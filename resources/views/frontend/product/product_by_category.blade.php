@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
-                    <div class="breadcrumb__content p-relative z-index-1">
+                    <div class="breadcrumb__content text-center p-relative z-index-1">
                         <h3 class="breadcrumb__title">{{ $categoryInfo->name }}</h3>
                         <div class="breadcrumb__list">
                             <span><a href="{{ route('home') }}">Home</a></span>
@@ -126,51 +126,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
-                                    <div class="tp-shop-top-right d-sm-flex align-items-center justify-content-xl-end">
-                                        <div class="tp-shop-top-select">
-                                            <select>
-                                                <option>Default Sorting</option>
-                                                <option>Low to Hight</option>
-                                                <option>High to Low</option>
-                                                <option>New Added</option>
-                                                <option>On Sale</option>
-                                            </select>
-                                        </div>
-                                        <div class="tp-shop-top-filter">
-                                            <button type="button" class="tp-filter-btn filter-open-btn">
-                                                <span>
-                                                    <svg width="16" height="15" viewBox="0 0 16 15"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M14.9998 3.45001H10.7998" stroke="currentColor"
-                                                            stroke-width="1.5" stroke-miterlimit="10"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                        <path d="M3.8 3.45001H1" stroke="currentColor" stroke-width="1.5"
-                                                            stroke-miterlimit="10" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path
-                                                            d="M6.5999 5.9C7.953 5.9 9.0499 4.8031 9.0499 3.45C9.0499 2.0969 7.953 1 6.5999 1C5.2468 1 4.1499 2.0969 4.1499 3.45C4.1499 4.8031 5.2468 5.9 6.5999 5.9Z"
-                                                            stroke="currentColor" stroke-width="1.5"
-                                                            stroke-miterlimit="10" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M15.0002 11.15H12.2002" stroke="currentColor"
-                                                            stroke-width="1.5" stroke-miterlimit="10"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                        <path d="M5.2 11.15H1" stroke="currentColor" stroke-width="1.5"
-                                                            stroke-miterlimit="10" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path
-                                                            d="M9.4002 13.6C10.7533 13.6 11.8502 12.5031 11.8502 11.15C11.8502 9.79691 10.7533 8.70001 9.4002 8.70001C8.0471 8.70001 6.9502 9.79691 6.9502 11.15C6.9502 12.5031 8.0471 13.6 9.4002 13.6Z"
-                                                            stroke="currentColor" stroke-width="1.5"
-                                                            stroke-miterlimit="10" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                                Filter
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div class="tp-shop-items-wrapper tp-shop-item-primary">
@@ -355,7 +311,7 @@
     </section>
     <!-- shop area end -->
 
-    <div class="modal fade tp-product-modal" id="producQuickViewModal" tabindex="-1"
+    {{-- <div class="modal fade tp-product-modal" id="producQuickViewModal" tabindex="-1"
         aria-labelledby="producQuickViewModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -392,5 +348,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

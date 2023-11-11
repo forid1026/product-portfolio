@@ -35,7 +35,8 @@
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="name" id="name" type="text"
-                                                    placeholder="Enter Your Name" required data-parsley-required-message="Name is required">
+                                                    placeholder="Enter Your Name" required
+                                                    data-parsley-required-message="Name is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="name">Your Name</label>
@@ -44,7 +45,8 @@
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="email" id="email" type="email"
-                                                    placeholder="Enter Your Email" required data-parsley-required-message="Email is required">
+                                                    placeholder="Enter Your Email" required
+                                                    data-parsley-required-message="Email is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="email">Your Email</label>
@@ -53,7 +55,8 @@
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
                                                 <input name="subject" id="subject" type="text"
-                                                    placeholder="Write your subject" required data-parsley-required-message="Subject is required">
+                                                    placeholder="Write your subject" required
+                                                    data-parsley-required-message="Subject is required">
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="subject">Subject</label>
@@ -61,7 +64,8 @@
                                         </div>
                                         <div class="tp-contact-input-box">
                                             <div class="tp-contact-input">
-                                                <textarea id="message" name="message" required data-parsley-required-message="Message is required" placeholder="Write your message here..."></textarea>
+                                                <textarea id="message" name="message" required data-parsley-required-message="Message is required"
+                                                    placeholder="Write your message here..."></textarea>
                                             </div>
                                             <div class="tp-contact-input-title">
                                                 <label for="message">Your Message</label>
@@ -80,7 +84,7 @@
                             <div class="tp-contact-info-item">
                                 <div class="tp-contact-info-icon">
                                     <span>
-                                        <img src="assets/img/contact/contact-icon-1.png" alt="">
+                                        <img src="{{ asset('frontend/assets/img/contact/contact-icon-1.png')}}" alt="">
                                     </span>
                                 </div>
                                 <div class="tp-contact-info-content">
@@ -91,14 +95,15 @@
                             <div class="tp-contact-info-item">
                                 <div class="tp-contact-info-icon">
                                     <span>
-                                        <img src="assets/img/contact/contact-icon-2.png" alt="">
+                                        <img src="{{ asset('frontend/assets/img/contact/contact-icon-2.png')}}" alt="">
                                     </span>
                                 </div>
                                 <div class="tp-contact-info-content">
                                     <p>
                                         <a href="https://www.google.com/maps/place/New+York,+NY,+USA/@40.6976637,-74.1197638,11z/data=!3m1!4b1!4m6!3m5!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728!16zL20vMDJfMjg2"
                                             target="_blank">
-                                            184, Razia Plaza, Senpara Parbata, Mirpur-10, Dhaka
+                                            House 24, Lane 2, Block A, Section 6, Mirpur 6 (10,060.80 km)
+                                            1216 Dhaka, Dhaka Division, Bangladesh
                                         </a>
                                     </p>
                                 </div>
@@ -106,7 +111,7 @@
                             <div class="tp-contact-info-item">
                                 <div class="tp-contact-info-icon">
                                     <span>
-                                        <img src="assets/img/contact/contact-icon-3.png" alt="">
+                                        <img src="{{ asset('frontend/assets/img/contact/contact-icon-3.png')}}" alt="">
                                     </span>
                                 </div>
                                 <div class="tp-contact-info-content">

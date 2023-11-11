@@ -1,8 +1,8 @@
 @extends('admin.admin_dashboard')
 @section('admin')
-<style>
+    <style>
 
-</style>
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <div class="app-main__inner">
         <!--breadcrumb-->
@@ -84,24 +84,37 @@
                                             p - {{ $product->product_code }}
                                         </td>
                                         @php
-                                            $link = 'http://127.0.0.1:8000/product-category/1';
+                                            $link = route('product.details', $product->slug);
                                         @endphp
+                                        <td>
+                                            <a href="" download="">
+                                                {!! DNS2D::getBarcodeHTML("$link ", 'QRCODE') !!}
+                                                p - {{ $product->product_code }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{-- <img src="data:image/png;base64,' . DNS2D::getBarcodePNG('4', 'PDF417') . '"
+                                                alt="barcode" />'; --}}
+                                                echo '<img src="data:image/png;base64,' . DNS2D::getBarcodePNG('4', 'PDF417') . '" alt="barcode"   />';
+                                        </td>
                                         <td>
                                             {!! $product->description !!}
                                         </td>
                                         <td>
                                             <img src="{{ asset($product->image) }}" width="80" alt="">
                                         </td>
-                                        <td style="display:flex">
-                                            <a title="Edit Product" style="margin-left: 5px;"
-                                                href="{{ route('edit.product', $product->id) }}" class="btn btn-info">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a title="Delete Category" id="delete" style="margin-left: 5px;"
-                                                href="{{ route('delete.product', $product->id) }}" class="btn btn-danger"
-                                                title="Delete Product">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a title="Edit Product" style="margin-left: 5px;"
+                                                    href="{{ route('edit.product', $product->id) }}" class="btn btn-info">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a title="Delete Category" id="delete" style="margin-left: 5px;"
+                                                    href="{{ route('delete.product', $product->id) }}"
+                                                    class="btn btn-danger" title="Delete Product">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

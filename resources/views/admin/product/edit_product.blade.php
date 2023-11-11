@@ -22,7 +22,7 @@
                                                 value="{{ $productInfo->name }}">
                                         </div>
                                     </div>
-                                    <input type="text" name="product_code" value="{{$productInfo->product_code}}">
+                                    <input type="hidden" name="product_code" value="{{$productInfo->product_code}}">
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <input type="text" id="slug" name="slug" class="form-control"
@@ -70,7 +70,7 @@
                                             <div class="col text-secondary">
                                                 <label for="" class="mb-2"><b>Student Image</b></label>
                                                 <input type="file" name="image" id="image" class="form-control"
-                                                    required data-parsley-required-message="Product Image is required">
+                                                    >
                                             </div>
                                             <div class="col-12 mt-3 text-secondary">
                                                 <img id="showImage" src="{{ !empty($productInfo->image) ? url($productInfo->image) : url('upload/no-image.jpg') }}" alt="Admin"

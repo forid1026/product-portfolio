@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
-                    <div class="breadcrumb__content p-relative z-index-1">
+                    <div class="breadcrumb__content p-relative  z-index-1">
                         <div class="breadcrumb__list has-icon">
                             <span class="breadcrumb-icon">
                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none"

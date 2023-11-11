@@ -15,24 +15,9 @@ class HomeController extends Controller
     {
         $products = Product::Orderby('name', 'asc')->get();
         $sliders = Slider::all();
-        return view('frontend.index', compact('products', 'sliders'));
+        $distributors = Distributor::where('status','1')->limit(4)->get();
+        return view('frontend.index', compact('products', 'sliders','distributors'));
     } //end method
-
-
-    public function ProductCategory()
-    {
-        $categories = Category::OrderBy('name', 'asc')->get();
-        return view('frontend.category.product_category', compact('categories'));
-    } //end method
-
-    public function ProductCategoryByName($id)
-    {
-        $categoryInfo = Category::findOrFail($id);
-        $categories = Category::OrderBy('name', 'asc')->get();
-        $productByCategory = Product::OrderBy('name', 'asc')->where('category_id', $id)->get();
-        return view('frontend.product.product_by_category', compact('productByCategory', 'categoryInfo', 'categories'));
-    } //end method
-
 
 
     public function ContactUs()
@@ -58,6 +43,21 @@ class HomeController extends Controller
     {
         return view('frontend.about');
     } //end method
+
+    public function ProductCategory()
+    {
+        $categories = Category::OrderBy('name', 'asc')->get();
+        return view('frontend.category.product_category', compact('categories'));
+    } //end method
+
+    public function ProductCategoryByName($id)
+    {
+        $categoryInfo = Category::findOrFail($id);
+        $categories = Category::OrderBy('name', 'asc')->get();
+        $productByCategory = Product::OrderBy('name', 'asc')->where('category_id', $id)->get();
+        return view('frontend.product.product_by_category', compact('productByCategory', 'categoryInfo', 'categories'));
+    } //end method
+
 
     public function Product()
     {

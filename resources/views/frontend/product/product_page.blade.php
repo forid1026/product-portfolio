@@ -16,7 +16,7 @@
         }
     </style>
     <!-- breadcrumb area start -->
-    <section class="breadcrumb__area include-bg pt-100 pb-50">
+    <section class="breadcrumb__area include-bg pt-100 text-center pb-50">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
